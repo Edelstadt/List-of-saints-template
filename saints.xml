@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!-- Příklad/Example -->
 <feasts>
   <article id="1"><!-- Problém - jak univerzálně a jednoznačně identifikovat? Možná LAT název?+ -->
     <day>6</day>
