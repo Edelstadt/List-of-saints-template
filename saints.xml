@@ -4,7 +4,7 @@
   <article id="1"><!-- Problém - jak univerzálně a jednoznačně identifikovat? Možná LAT název?+ -->
     <day>6</day>
     <month>12</month>
-    <name_cz>Mikuláš, biskup z Myry</name_cz><!-- možná lepší by bylo <name lang="CZ"> bude jich více -->
+    <name_cz>Mikuláš, biskup z Myry</name_cz><!-- možná lepší by bylo <name lang="CZ"> bude jich více (EP, FR, ...? -->
     <name_lat>Nicolaus, Episcopus Myrensis</name_lat>
     <name_de>Nikolaus von Myra</name_de>
     <first_year></first_year><!-- Rok od kdy se slaví (u některých položek nejspíš bude problém) -->
