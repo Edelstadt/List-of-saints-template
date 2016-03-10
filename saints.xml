@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <feasts>
+    <article id="1"><!-- Problém - jak univerzálně a jednoznačně identifikovat? Možná LAT název?+ -->
+      <day>6</day>
+      <month>12</month>
+      <name_cz>Mikuláš, biskup z Myry</name_cz><!-- možná lepší by bylo <name lang="CZ"> bude jich více -->
+      <name_lat>Nicolaus, Episcopus Myrensis</name_lat>
+      <name_de>Nikolaus von Myra</name_de>
+      <first_year></first_year><!-- Rok od kdy se slaví (u některých položek nejspíš bude problém) -->
+      <significant_in></significant_in><!-- Zvláštní význam v (třeba země, město ...) -->
+      <source>Historická chronologie, Marie Bláhová</source><!-- Zdroj odkud beru data, může jich být více -->
+      <source></source><!-- Možná doplnit type="Publikace" nebo Archiválie, online ? -->
+      <comment></comment><!-- Komentáře, možná krátky popis života nebo nějaká zvláštnost ? -->
+    </article>
+  </feasts>
+</root>
