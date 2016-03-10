@@ -8,6 +8,7 @@
     <name_lat>Nicolaus, Episcopus Myrensis</name_lat>
     <name_de>Nikolaus von Myra</name_de>
     <first_year></first_year><!-- Rok od kdy se slaví (u některých položek nejspíš bude problém) -->
+    <venerated>Roman Catholic Church</venerated><!-- Uctívaný v církvi (opět možno více položek) -->
     <significant_in></significant_in><!-- Zvláštní význam v (třeba země, město ...) -->
     <source>Historická chronologie, Marie Bláhová</source><!-- Zdroj odkud beru data, může jich být více -->
     <source></source><!-- Možná doplnit type="Publikace" nebo Archiválie, online ? -->
