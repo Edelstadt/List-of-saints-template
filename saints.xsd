@@ -12,7 +12,7 @@
 				</xs:element>
 				<xs:element name="year_since" type="xs:gYear" nillable="true"/><!--rok od kdy se slaví (možný problém, leckdy poue století-->
 				<xs:element name="year_until" type="xs:gYear" nillable="true"/><!--některé už se slavit přestaly-->
-				<xs:element name="venerated" type="xs:string"/><!--ve kterých církvích uctívaný (kat., pravoslav., ...-->
+				<xs:element name="venerated" type="xs:string"/><!--ve kterých církvích uctívaný (kat., pravoslav., ...), možná postačující omezení na KAT, PRAV, ... ?-->
 				<xs:element name="significant_in" type="xs:string" nillable="true"/><!--může být zvlášť důležitý na některých místech, možná rozšíření (?)-->
 				<xs:element name="source" maxOccurs="10"><!--zdroj čerpání dat (možná lepší u každé položky ?)-->
 					<xs:complexType>
