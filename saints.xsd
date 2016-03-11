@@ -24,6 +24,6 @@
 				</xs:element>
 				<xs:element name="comment" type="xs:string" nillable="true"/><!--komentáře, životopis, zajímavost ?-->
 			</xs:sequence>
-		</xs:complexType><!--</xs:element>-->
+		</xs:complexType>
 	</xs:element>
 </xs:schema>
