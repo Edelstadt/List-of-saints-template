@@ -10,8 +10,16 @@
 						<xs:attribute name="lang" type="xs:string"/>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="year_since" type="xs:gYear" nillable="true"/><!--rok od kdy se slaví (možný problém, leckdy poue století-->
-				<xs:element name="year_until" type="xs:gYear" nillable="true"/><!--některé už se slavit přestaly-->
+				<xs:element name="since" type="xs:gYear" nillable="true"/><!--rok od kdy se slaví (výběr rok nebo století)-->
+				<xs:choice>
+					<xs:element name="year" type="xs:gYear"/>
+					<xs:element name="century" type="xs:byte"/>
+				</xs:choice>
+				<xs:element name="until" type="xs:gYear" nillable="true"/><!--některé už se slavit přestaly-->
+				<xs:choice>
+					<xs:element name="year" type="xs:gYear"/>
+					<xs:element name="century" type="xs:byte"/>
+				</xs:choice>
 				<xs:element name="venerated" type="xs:string"/><!--ve kterých církvích uctívaný (kat., pravoslav., ...), možná postačující omezení na KAT, PRAV, ... ?-->
 				<xs:element name="significant_in" type="xs:string" nillable="true"/><!--může být zvlášť důležitý na některých místech, možná rozšíření (?)-->
 				<xs:element name="source" maxOccurs="10"><!--zdroj čerpání dat (možná lepší u každé položky ?)-->
