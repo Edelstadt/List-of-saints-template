@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New document created with EditiX at Mon Mar 14 08:45:47 CET 2016 -->
+
+<articles xsi:noNamespaceSchemaLocation="saints.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<article>
+		<date>--12-06</date>
+		<name lang="CS">Sv. Mikuláš</name>
+		<name lang="DE">Nikolaus von Myra</name>
+		<since>
+			<century>8
+	</century>
+		</since>
+		<until xsi:nil="true"/>
+		<venerated>ANGL., BAPT., KALV., KAT., LUT., METOD., PRAV., PRESB., VYCH. PRAV. CIRK.</venerated>
+		<significant_in>RUS., LOTR</significant_in>
+		<source>
+			<url>https://cs.wikipedia.org/wiki/Svat%C3%BD_Mikul%C3%A1%C5%A1</url>
+		</source>
+		<comment/>
+	</article>
+	<article>
+		<date>--12-06</date>
+		<name lang="CS">Sv. Mikuláš</name>
+		<name lang="DE">Nikolaus von Myra</name>
+		<since>
+			<century>8
+	</century>
+		</since>
+		<until xsi:nil="true"/>
+		<venerated>ANGL., BAPT., KALV., KAT., LUT., METOD., PRAV., PRESB., VYCH. PRAV. CIRK.</venerated>
+		<significant_in>RUS., LOTR</significant_in>
+		<source>
+			<url>https://cs.wikipedia.org/wiki/Svat%C3%BD_Mikul%C3%A1%C5%A1</url>
+		</source>
+		<comment/>
+	</article>
+</articles>
