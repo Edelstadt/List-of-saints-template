@@ -20,18 +20,15 @@
 		<comment/>
 	</article>
 	<article>
-		<date>--12-06</date>
-		<name lang="CS">Sv. Mikuláš</name>
-		<name lang="DE">Nikolaus von Myra</name>
-		<since>
-			<century>8
-	</century>
-		</since>
+		<date>--12-27</date>
+		<name lang="CS">Jan Evangelista</name>
+		<name lang="DE">Johannes (Evangelist)</name>
+		<since xsi:nil="true"/>
 		<until xsi:nil="true"/>
 		<venerated>ANGL., BAPT., KALV., KAT., LUT., METOD., PRAV., PRESB., VYCH. PRAV. CIRK.</venerated>
-		<significant_in>RUS., LOTR</significant_in>
+		<significant_in xsi:nil="true"/>
 		<source>
-			<url>https://cs.wikipedia.org/wiki/Svat%C3%BD_Mikul%C3%A1%C5%A1</url>
+			<url>https://cs.wikipedia.org/wiki/Jan_Evangelista</url>
 		</source>
 		<comment/>
 	</article>
