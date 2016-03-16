@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
 	<xs:element name="articles">
 		<xs:complexType>
 			<xs:sequence>
@@ -39,8 +38,40 @@
 							<xs:element name="source" maxOccurs="10"><!--zdroj čerpání dat (možná lepší u každé položky ?)-->
 								<xs:complexType>
 									<xs:choice>
-										<xs:element name="url" type="xs:anyURI"/><!--třeba web-->
-										<xs:element name="isbn" type="xs:positiveInteger"/><!--nebo kniha (isbn méně vhodné s přihlédnutím ke starším tiskům-->
+										<xs:element name="url"><!--třeba web-->
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="author" nillable="true">
+														<xs:complexType>
+															<xs:attribute name="surname" type="xs:string"/>
+															<xs:attribute name="name" type="xs:string"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="page_title" type="xs:string"/>
+													<xs:element name="web_title" type="xs:string"/>
+													<xs:element name="addrese" type="xs:anyURI"/>
+													<xs:element name="date_visit" type="xs:date" nillable="true"/>
+													<xs:element name="date_citation" type="xs:date"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="book"><!--nebo kniha (isbn méně vhodné s přihlédnutím ke starším tiskům-->
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="author" maxOccurs="4">
+														<xs:complexType>
+															<xs:attribute name="surname" type="xs:string"/>
+															<xs:attribute name="name" type="xs:string"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="isbn" type="xs:nonNegativeInteger"/>
+													<xs:element name="publication_title" type="xs:string"/>
+													<xs:element name="place_issue" type="xs:string"/>
+													<xs:element name="publisher" type="xs:string"/>
+													<xs:element name="year_publication" type="xs:short"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
 									</xs:choice>
 								</xs:complexType>
 							</xs:element>
