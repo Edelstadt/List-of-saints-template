@@ -52,6 +52,18 @@
 													<xs:element name="addrese" type="xs:anyURI"/>
 													<xs:element name="date_visit" type="xs:date" nillable="true"/>
 													<xs:element name="date_citation" type="xs:date"/>
+													<xs:element name="relate_to" nillable="true" maxOccurs="10">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="name"/>
+																<xs:enumeration value="date"/>
+																<xs:enumeration value="since"/>
+																<xs:enumeration value="until"/>
+																<xs:enumeration value="venerated"/>
+																<xs:enumeration value="significant_in"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
@@ -69,6 +81,18 @@
 													<xs:element name="place_issue" type="xs:string"/>
 													<xs:element name="publisher" type="xs:string"/>
 													<xs:element name="year_publication" type="xs:short"/>
+													<xs:element name="relate_to" nillable="true" maxOccurs="10">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="name"/>
+																<xs:enumeration value="date"/>
+																<xs:enumeration value="since"/>
+																<xs:enumeration value="until"/>
+																<xs:enumeration value="venerated"/>
+																<xs:enumeration value="significant_in"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
