@@ -11,8 +11,7 @@
 			<century>8</century>
 		</since>
 		<until xsi:nil="true"/>
-		<venerated>cat
-		</venerated>
+		<venerated>cat</venerated>
 		<significant_in xsi:nil="true"/>
 		<source>
 			<url id="0002">
@@ -27,21 +26,14 @@
 		<source>
 			<book id="0001">
 				<author>
-					<surname>Bláhová
-				</surname>
-					<name>Marie
-				</name>
+					<surname>Bláhová</surname>
+					<name>Marie</name>
 				</author>
-				<isbn>	8072770241
-				</isbn>
-				<publication_title>Historická chronologie
-				</publication_title>
-				<place_issue>Praha
-				</place_issue>
-				<publisher>LIBRI
-				</publisher>
-				<year_publication>2001
-				</year_publication>
+				<isbn>8072770241</isbn>
+				<publication_title>Historická chronologie</publication_title>
+				<place_issue>Praha</place_issue>
+				<publisher>LIBRI</publisher>
+				<year_publication>2001</year_publication>
 			</book>
 		</source>
 		<comment/>
