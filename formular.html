@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type='text/javascript'>
+        function addFields(){
+    		var elmnt = document.getElementById("date1");
+    		var cln = elmnt.cloneNode(true);
+		cln.id = "date2";
+		document.getElementById("date").appendChild(cln); 
+        }
+
+	function print_value(){
+		var text = "";
+		var hodnoty = document.getElementById("date").getElementsByTagName("INPUT");
+		for (i = 0; i < hodnoty.length; i++) {
+			if (hodnoty[i].type == "radio") {
+				
+               				if (hodnoty[i].checked) {
+						text += hodnoty[i].value + " pole<br>";
+					}}
+			else {
+    				text += hodnoty[i].value + " pole" + "<br>";
+					}}
+		
+		alert(text);
+		}
+    </script>
+</head
+<body>
+<div id="date">
+	<div id="date1">
+	<input type="text" id="day" name="day" value="">Day<br />
+	<input type="text" id="month" name="month" value="">Month<br />
+	Source as radio or select (item generating from other part ... ?)<br />
+	<input type="radio" name="gender" value="primary" checked> Primary ?<br>
+	
+	</div>
+
+
+</div>
+<a href="#" id="filldetails" onclick="addFields()">Add date</a><br />
+<a href="#" id="filldetails" onclick="print_value()">Print Item</a>
+</body>
+</html>
