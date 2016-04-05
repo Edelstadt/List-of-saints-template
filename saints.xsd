@@ -10,149 +10,155 @@
 		</xs:simpleType>
 	</xs:attribute>
 	<xs:attribute name="sources" type="xs:string"/>
-	<xs:element name="articles">
+	<xs:element name="root">
 		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="article" maxOccurs="unbounded">
+			<xs:all>
+				<xs:element name="source"><!--zdroj čerpání dat (možná lepší u každé položky ?)-->
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="url"><!--třeba web-->
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="author" nillable="true">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="surname" type="xs:string"/>
+													<xs:element name="name" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="page_title" type="xs:string"/>
+										<xs:element name="web_title" type="xs:string"/>
+										<xs:element name="addrese" type="xs:anyURI"/>
+										<xs:element name="date_visit" type="xs:date" nillable="true"/>
+										<xs:element name="date_citation" type="xs:date"/>
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:integer"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="book"><!--nebo kniha (isbn méně vhodné s přihlédnutím ke starším tiskům-->
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="author" maxOccurs="4">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="surname" type="xs:string"/>
+													<xs:element name="name" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="isbn" type="xs:nonNegativeInteger"/>
+										<xs:element name="publication_title" type="xs:string"/>
+										<xs:element name="place_issue" type="xs:string"/>
+										<xs:element name="publisher" type="xs:string"/>
+										<xs:element name="year_publication" type="xs:short"/>
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:integer"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="articles">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="date">
+							<xs:element name="article" maxOccurs="unbounded">
 								<xs:complexType>
-									<xs:simpleContent>
-										<xs:extension base="xs:gMonthDay">
-											<xs:attribute ref="important" default="primary"/>
-											<xs:attribute name="sources" type="xs:string"/>
-										</xs:extension>
-									</xs:simpleContent>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="name" maxOccurs="10"><!--jméno svátku min. v jednom jazyce, max. v 10 (?)-->
-								<xs:complexType>
-									<xs:simpleContent>
-										<xs:extension base="xs:string">
-											<xs:attribute name="lang" type="xs:language"/>
-											<xs:attribute name="sources" type="xs:string"/>
-										</xs:extension>
-									</xs:simpleContent>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="since" nillable="true"><!--rok od kdy se slaví (výběr rok nebo století)-->
-								<xs:complexType>
-									<xs:choice>
-										<xs:element name="year">
+									<xs:sequence>
+										<xs:element name="date">
 											<xs:complexType>
 												<xs:simpleContent>
-													<xs:extension base="xs:gYear">
+													<xs:extension base="xs:gMonthDay">
+														<xs:attribute ref="important" default="primary"/>
 														<xs:attribute name="sources" type="xs:string"/>
 													</xs:extension>
 												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="century">
+										<xs:element name="name" maxOccurs="10"><!--jméno svátku min. v jednom jazyce, max. v 10 (?)-->
 											<xs:complexType>
 												<xs:simpleContent>
-													<xs:extension base="xs:positiveInteger">
+													<xs:extension base="xs:string">
+														<xs:attribute name="lang" type="xs:language"/>
 														<xs:attribute name="sources" type="xs:string"/>
 													</xs:extension>
 												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-									</xs:choice>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="until" nillable="true"><!--některé už se slavit přestaly-->
-								<xs:complexType>
-									<xs:choice>
-										<xs:element name="year">
+										<xs:element name="since" nillable="true"><!--rok od kdy se slaví (výběr rok nebo století)-->
 											<xs:complexType>
-												<xs:simpleContent>
-													<xs:extension base="xs:gYear">
-														<xs:attribute name="sources" type="xs:string"/>
-													</xs:extension>
-												</xs:simpleContent>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="century">
-											<xs:complexType>
-												<xs:simpleContent>
-													<xs:extension base="xs:positiveInteger">
-														<xs:attribute name="sources" type="xs:string"/>
-													</xs:extension>
-												</xs:simpleContent>
-											</xs:complexType>
-										</xs:element>
-									</xs:choice>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="venerated" maxOccurs="10">
-								<xs:complexType>
-									<xs:simpleContent>
-										<xs:extension base="xs:string">
-											<xs:attribute name="sources" type="xs:string"/>
-										</xs:extension>
-									</xs:simpleContent>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="significant_in" nillable="true">
-								<xs:complexType>
-									<xs:simpleContent>
-										<xs:extension base="xs:string">
-											<xs:attribute name="sources" type="xs:string"/>
-										</xs:extension>
-									</xs:simpleContent>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="source" maxOccurs="10"><!--zdroj čerpání dat (možná lepší u každé položky ?)-->
-								<xs:complexType>
-									<xs:choice>
-										<xs:element name="url"><!--třeba web-->
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="author" nillable="true">
+												<xs:choice>
+													<xs:element name="year">
 														<xs:complexType>
-															<xs:sequence>
-																<xs:element name="surname" type="xs:string"/>
-																<xs:element name="name" type="xs:string"/>
-															</xs:sequence>
+															<xs:simpleContent>
+																<xs:extension base="xs:gYear">
+																	<xs:attribute name="sources" type="xs:string"/>
+																</xs:extension>
+															</xs:simpleContent>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="page_title" type="xs:string"/>
-													<xs:element name="web_title" type="xs:string"/>
-													<xs:element name="addrese" type="xs:anyURI"/>
-													<xs:element name="date_visit" type="xs:date" nillable="true"/>
-													<xs:element name="date_citation" type="xs:date"/>
-												</xs:sequence>
-												<xs:attribute name="id" type="xs:integer"/>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="book"><!--nebo kniha (isbn méně vhodné s přihlédnutím ke starším tiskům-->
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="author" maxOccurs="4">
+													<xs:element name="century">
 														<xs:complexType>
-															<xs:sequence>
-																<xs:element name="surname" type="xs:string"/>
-																<xs:element name="name" type="xs:string"/>
-															</xs:sequence>
+															<xs:simpleContent>
+																<xs:extension base="xs:positiveInteger">
+																	<xs:attribute name="sources" type="xs:string"/>
+																</xs:extension>
+															</xs:simpleContent>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="isbn" type="xs:nonNegativeInteger"/>
-													<xs:element name="publication_title" type="xs:string"/>
-													<xs:element name="place_issue" type="xs:string"/>
-													<xs:element name="publisher" type="xs:string"/>
-													<xs:element name="year_publication" type="xs:short"/>
-												</xs:sequence>
-												<xs:attribute name="id" type="xs:integer"/>
+												</xs:choice>
 											</xs:complexType>
 										</xs:element>
-									</xs:choice>
+										<xs:element name="until" nillable="true"><!--některé už se slavit přestaly-->
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="year">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:gYear">
+																	<xs:attribute name="sources" type="xs:string"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="century">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:positiveInteger">
+																	<xs:attribute name="sources" type="xs:string"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="venerated" maxOccurs="10">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="sources" type="xs:string"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="significant_in" nillable="true">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="sources" type="xs:string"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="comment" type="xs:string" nillable="true"/><!--komentáře, životopis, zajímavost ?-->
+									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="comment" type="xs:string" nillable="true"/><!--komentáře, životopis, zajímavost ?-->
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-			</xs:sequence>
+			</xs:all>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
